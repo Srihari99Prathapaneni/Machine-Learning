@@ -80,3 +80,56 @@
     - Once again performed the VIF's on Remaing variable on train dataset and removed violatable features as one by one with reapeating the process.
 
 3. Steps 7 & 8 & 9 are same as multiple linear regression.
+
+
+
+# Logistic Regression
+
+ - Steps followed for Logistic Regression:
+
+1. Import Required Libraries
+    - Imported pandas, numpy, matplotlib, seaborn, and statsmodels.
+    - Loaded the dataset(s) and merged them into a single master dataframe.
+
+2. Inspect the Dataset
+    - Viewed the first few rows with .head().
+    - Checked shape, summary statistics with .describe(), and data types with .info().
+    - Identified categorical and numerical variables.
+
+3. Data Cleaning
+    - Converted binary categorical variables (Yes/No) into numerical (1/0).
+    - Applied get_dummies() for multi-level categorical variables.
+    - Concatenated dummy variables with the main dataset and dropped redundant columns.
+    - Converted string-based numeric columns (like TotalCharges) into float using pd.to_numeric().
+    - Handled missing values (removed rows with NaN in TotalCharges).
+
+4. Train-Test Split
+    - Defined X (independent variables) and y (dependent variable: Churn).
+    - Split into training and testing sets using train_test_split() with 70:30 ratio.
+
+5. Feature Scaling
+    - Applied StandardScaler to continuous variables (tenure, MonthlyCharges, TotalCharges).
+    - Ensured scaling was done only on training data, then applied the same transformation to test data.
+
+6. Correlation Analysis
+    - Visualized correlations with a heatmap.
+    - Dropped highly correlated dummy variables to avoid multicollinearity.
+
+7. Model Building
+    - Built the initial logistic regression model using statsmodels.api.GLM() with Binomial family.
+    - Checked model summary for coefficients, p-values, and pseudo R².
+    - Removed variables with high p-values (>0.05).
+
+8. Feature Selection (RFE)
+    - Applied Recursive Feature Elimination (RFE) with LogisticRegression() to select top predictors.
+    - Retained features marked as important by RFE.
+
+9. Rebuild the Model
+    - Rebuilt logistic regression with selected features.
+    - Iteratively refined by checking p-values and removing insignificant variables.
+
+10. Model Evaluation
+    - Predicted probabilities on training and test sets.
+    - Conducted residual analysis and checked assumptions.
+    - Evaluated performance using confusion matrix, accuracy, precision, recall, and ROC-AUC.
+    - Plotted ROC curve to visualize classification performance.

@@ -133,3 +133,67 @@
     - Conducted residual analysis and checked assumptions.
     - Evaluated performance using confusion matrix, accuracy, precision, recall, and ROC-AUC.
     - Plotted ROC curve to visualize classification performance.
+
+# Decision Tree
+
+    - Steps to follow for the Decision Tree
+
+1. Import Libraries
+    - Import the required liraries
+    - Inspect the DataFrame
+
+2. Variables split
+    - Classify the feature variables and target variables
+    - Split the data set into train and test data using train_test_split
+
+3. Modelling
+    - Instatntiate DesicionTreeClassifier as object
+    - Fit the train datasets into model 
+
+4. Imported Libraries for Visualization
+    - IPython, six, graphviz, pydotplus
+
+5. Model Evaluation
+    - Perform accuracy_score and confusion_matrix on train and test datasets
+
+6. Hyper-parameter Tuning
+    - Modify the depth of tree
+    - Minimum samples before split
+    - Minimum samples in leafnode
+    - Use Entropy instead of Gini
+    - Perform hyper-parameter tuning using GridSearchCV
+
+7. Model Evaluation
+    - Perform Best_estimator using GridSearchCV
+    - Evaluate accuracy_score and confusion_matrix
+    - Perform the Classification Report on best_estimator
+
+
+# Random Forest
+    - Steps to follow for the Decision Tree
+
+1. Import Libraries
+    - Import the required liraries
+    - Inspect the DataFrame
+
+2. Variables split
+    - Classify the feature variables and target variables
+    - Split the data set into train and test data using train_test_split
+
+3. Modelling
+    - Instatntiate RandomForestClassifier as object
+    - Fit the train datasets into model 
+
+4. Imported Libraries for Visualization
+    - IPython, six, graphviz, pydotplus
+
+5. Model Evaluation
+    - Perform accuracy_score and confusion_matrix on train and test datasets
+
+6. Hyper-parameter Tuning
+    - Enable the OOB_Score on RandomForestClassifier
+    - Perform hyper-parameter tuning using GridSearchCV
+
+7. Variable Importance
+    - Perform the variable Importance on random forests.
+
